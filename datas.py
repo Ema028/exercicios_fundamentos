@@ -50,6 +50,8 @@ def check_data(data):
         return data.split('\\')
     elif 'de' in data:
         return data.split('de')
+    elif '/' in data:
+        return data.split('/')
     else:
         return data.split()
         
@@ -69,5 +71,5 @@ def check_meses(mes):
             return i + 1
     return int(mes)
  
-if _name_ == '_main_':   
-    main()
+   
+main()
