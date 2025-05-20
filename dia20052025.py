@@ -53,4 +53,65 @@ def merge_sort(arr):
                 
 main()
 
-#2 
+#2 with bubble
+from random import randint
+
+def main():
+    numbers = [randint(0,30) for i in range(20)]
+    print(numbers)
+    
+    numbers = new_set(numbers)
+    print(numbers)
+    bubble_sort(numbers)
+    
+    print(numbers)
+    
+def new_set(arr):
+    lista = []
+    for i in range(len(arr)):
+        if arr[i] not in lista:
+            lista.append(arr[i])
+    return lista
+    
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(1, n):
+        for i in range(1, n):
+            if (arr[i - 1] > arr[i]):
+                temp = arr[i - 1]
+                arr[i - 1] = arr[i]
+                arr[i] = temp
+                
+main()
+#3 with selection
+from random import randint
+from math import inf
+
+def main():
+    numbers = [randint(0,100) for i in range(20)]
+    print(numbers)
+    
+    selection_sort(numbers)
+    n = len(numbers)//2
+    
+    if (n % 2 == 0):
+        mediana = (numbers[n - 1] + numbers[n])/2
+    else:
+        mediana = numbers[n]
+    
+    print(numbers)
+    print(mediana)
+    
+def selection_sort(arr):
+    n = len(arr)
+    for i in range(n - 1):
+        mini = arr[i]
+        index = i
+        for j in range(i + 1, n):
+            if (arr[j] < mini):
+                mini = arr[j]
+                index = j
+        temp = arr[i]
+        arr[i] = mini
+        arr[index] = temp
+main()
