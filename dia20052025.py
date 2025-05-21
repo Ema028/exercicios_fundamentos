@@ -115,3 +115,64 @@ def selection_sort(arr):
         arr[i] = mini
         arr[index] = temp
 main()
+
+#7 with binary search
+from random import randint
+
+def main():
+    numbers = [randint(-100,100) for i in range(15)]
+    print(numbers)
+    merge_sort(numbers)
+    print(numbers)
+    number = int(input("diga um número"))
+    if binary_search(numbers, number):
+        print("está na lista")
+        return True
+    print("não está")
+    
+def binary_search(arr, n):
+    
+    return False
+    
+def merge_sort(arr):
+    n = len(arr)
+    if (n > 1):
+        middle = n//2
+        l = n - middle
+        r = n - l
+        
+        left = [0] * l
+        right = [0] * r
+        
+        for i in range(l):
+            left[i] = arr[i]
+        for j in range(r):
+            right[j] = arr[l + j]
+            
+        merge_sort(left)
+        merge_sort(right)
+        
+        index = 0
+        i = 0
+        j = 0
+        while (i < l and j < r):
+            if (left[i] < right[j]):
+                arr[index] = left[i]
+                i += 1
+                index += 1
+            else:
+                arr[index] = right[j]
+                j += 1
+                index += 1
+                
+        while (i < l):print(numbers)
+            arr[index] = left[i]
+            i += 1
+            index += 1
+                
+        while(j < r):
+            arr[index] = right[j]
+            j += 1
+            index += 1
+                
+main()
