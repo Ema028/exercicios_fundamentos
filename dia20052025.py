@@ -131,8 +131,15 @@ def main():
     print("não está")
     
 def binary_search(arr, n):
-    
-    return False
+    i = (len(arr) - 1) // 2
+    while(arr[i] != n):
+        if((i != 0 and arr[i] > n and arr[i - 1] < n) or (i != (len(arr) - 1) and arr[i] < n and arr[i + 1] > n)):
+            return False
+        if(arr[i] > n):
+            i = i // 2
+        else:
+            i = i + (len(arr) - 1) // 2
+    return True
     
 def merge_sort(arr):
     n = len(arr)
